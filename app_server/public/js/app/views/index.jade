@@ -1,0 +1,23 @@
+extends layout
+
+block body
+
+    div(ng-view)
+
+    //LIBRARIES
+    script(src='js/lib/angular/angular.js')
+    script(src='js/lib/angular/angular-resource.js')
+    script(src='js/lib/ui-bootstrap/ui-bootstrap-tpls-0.4.0.js')
+
+    //ROUTES
+    script(src='js/app/app.js')
+
+    //CONTROLLERS
+    script(src='js/app/controllers/controllers.js')
+
+    //SERVICES
+    script(src='js/app/services/guests_services.js')
+    script(src='js/app/services/employee_services.js')
+    script(src='js/app/services/common_services.js')
+    script(src='js/app/services/login_services.js')
+

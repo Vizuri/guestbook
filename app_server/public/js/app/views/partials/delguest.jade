@@ -1,0 +1,7 @@
+h2 {{guest.first_name}}
+div {{guest.last_name}}
+p
+  | Are you sure you want to delete this guest? 
+  button(class='btn btn-primary', ng-click='delGuest()') Yes
+  |  - 
+  button(class='btn btn-primary', ng-click='home()') No thanks

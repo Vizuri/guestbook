@@ -1,0 +1,11 @@
+div
+    h2 Login
+    label(for='first_name') Username:
+    input(ng-model='form.username', name='username')
+    p
+    label(for='last_name') Password:
+    input(ng-model='form.password', name='password')
+    p
+    button(class='btn btn-primary', ng-click='login()') Login
+    button(class='btn btn-primary',style='margin-left: 100px;', ng-click='googlelogin()') Google Login
+//button(class='btn btn-primary', ng-click='saveUser()') Save User

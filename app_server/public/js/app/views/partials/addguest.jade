@@ -1,0 +1,17 @@
+h2 Add a New Guest
+label(for='first_name') First Name: 
+input(ng-model='form.first_name', name='first_name')
+p
+label(for='last_name') Last Name: 
+input(ng-model='form.last_name', name='last_name')
+p
+label(for='company') Company: 
+input(ng-model='form.company', name='company')
+p
+label(for='meeting_with') Meeting With:
+input(ng-model='form.meeting_with', name='meeting_with', ng-click='lookupEmployee()')
+p
+label(for='is_us_citizen') US Citizen?: 
+input(type='checkbox', ng-model='form.is_us_citizen', name='is_us_citizen', size='30')
+p
+button(class='btn btn-primary', ng-click='submitGuest()') Submit New Guest

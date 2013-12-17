@@ -1,0 +1,29 @@
+h5 There are {{guests.length}} Guests Currently Checked In
+button(class="btn btn-primary", ng-model='addguest', ng-click='addGuest()') Add Guest
+
+div
+    table(ng-table="guestDirTable", class="table")
+        thead
+            tr: th Name
+                th(style='text-align:center;') Checked In
+                th(style='text-align:center;') Meeting With
+                th(style='text-align:center;') US Citizen
+                th(style='text-align:center;') Badge Type
+                th(style='text-align: center;') Actions
+        tbody
+            tr(ng-repeat='guest in guests | orderBy:predicate:reverse', style='margin-left: 0; text-align: center;')
+                td: h4 {{guest.last_name}} , {{guest.first_name}}
+                td(style='text-align:center; color: red;')
+                    h4 {{guest.checkin_time  | date:'medium'}}
+                td(style='text-align:center;')
+                    h4 {{guest.meeting_with.first_name}} {{guest.meeting_with.last_name}}
+                td(style='text-align:center;')
+                    h4 {{guest.is_us_citizen}}
+                td(style='text-align:center;')
+                    div(class='btn-group')
+                        button(class="btn btn-primary", ng-model='guest.badge_type', btn-radio="'U'", ng-click='changeBadgeType(guest)') U
+                        button(class="btn btn-primary", ng-model='guest.badge_type', btn-radio="'V'", ng-click='changeBadgeType(guest)') V
+                td(style='text-align:center;')
+                    a(href='/#/delguest/{{guest._id}}') Delete Guest
+                    | -
+                    a(href='/#/editguest/{{guest._id}}') Edit Guest

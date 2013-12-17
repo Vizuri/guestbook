@@ -1,0 +1,7 @@
+div
+    table(ng-table="employeeDirTable", class="table")
+        thead
+            tr: th Employee Directory
+        tbody
+            tr(ng-repeat='employee in employees', ng-click='selectEmployee(employee)')
+                td {{employee.first_name}} {{employee.last_name}}

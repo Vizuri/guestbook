@@ -1,0 +1,17 @@
+h2 Edit an Existing Guest
+label(for='first_name') First Name: 
+input(ng-model='guest.first_name', name='first_name')
+p
+label(for='last_name') Last Name: 
+input(ng-model='guest.last_name', name='last_name')
+p
+label(for='company') Company: 
+input(ng-model='guest.company', name='company')
+p
+label(for='meeting_with') Meeting With:
+input(ng-model='guest.meeting_with.full_name', name='meeting_with', ng-click='lookupEmployee()')
+p
+label(for='is_us_citizen') US Citizen?: 
+input(type='checkbox', ng-model='guest.is_us_citizen', name='is_us_citizen', size='30')
+p
+button(class='btn btn-primary', ng-click='save_changes()') Save Changes
